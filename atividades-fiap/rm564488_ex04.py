@@ -14,7 +14,10 @@ valor_resgate = float(input("Digite o valor a ser resgatado: "))
 dias_investido = int(input("Digite o número de dias que o valor permaneceu investido: "))
 
 if(tipo_investimento == 1):
-    if(181 <= dias_investido <= 360):
+    if(dias_investido <= 180):
+        valor_imposto = valor_resgate * 0.225
+        print(f"O valor do imposto de renda a ser pago é: R${valor_imposto:.2f}")
+    elif(181 <= dias_investido <= 360):
         valor_imposto = valor_resgate * 0.2
         print(f"O valor do imposto de renda a ser pago é: R${valor_imposto:.2f}")
     elif(361 <= dias_investido <= 720):
